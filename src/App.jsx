@@ -8,20 +8,37 @@ import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-       <main className="pt-[76px]">
+    <div className="min-h-screen bg-[#F3F3F2] text-[#222222]">
+      <Navbar />
+
+      <main className="pt-[76px]">
         <Routes>
-        
-        <Route path="/" element={<Home />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/book/:id" element={<BookDetails />} />
-        <Route path="/read/:id" element={<Reader />} />
-      </Routes>
+          {/* HOME */}
+          <Route
+            path="/"
+            element={<Home />}
+          />
+
+          {/* LIBRARY */}
+          <Route
+            path="/library"
+            element={<Library />}
+          />
+
+          {/* BOOK DETAILS */}
+          <Route
+            path="/books/:id"
+            element={<BookDetails />}
+          />
+
+          {/* READER */}
+          <Route
+            path="/read/:id"
+            element={<Reader />}
+          />
+        </Routes>
       </main>
-      
     </div>
-    
   );
 }
 
